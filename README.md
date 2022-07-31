@@ -1,5 +1,16 @@
 # Face Drooping detection
  
++ download data (v)
++ preprocess data to match droopy distribution (v)
++ split data (v)
++ create datagen (v)
++ model pipelining (v)
++ add pretrain vggface with downloaded weight (?)[-might change]
++ add model training and callbacks (v)
++ add prediction (v)
++ tune model (-)
+
+
 ## accuracy still bad (-)
  
 -supposed to be droopy
