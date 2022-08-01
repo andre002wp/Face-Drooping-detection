@@ -11,14 +11,17 @@
 + tune model (-)
 
 
-## accuracy still bad (-)
- 
+## accuracy high accuracy but still still bad (?)
+ ![image](https://user-images.githubusercontent.com/24908637/182247820-5c4be6ae-681d-4827-85f0-dd7fa0059bcf.png)
+
 -supposed to be droopy
-![image](https://user-images.githubusercontent.com/24908637/182028110-0bfa51b3-4c75-417b-80ce-f2fe950e4105.png)
+![image](https://user-images.githubusercontent.com/24908637/182248106-5a701db0-6950-4271-a7ec-f60d4567c732.png)
 
 -supposed to be normal
-![image](https://user-images.githubusercontent.com/24908637/182028183-5d5286fe-b226-40ec-a088-52092bc857c3.png)
+![image](https://user-images.githubusercontent.com/24908637/182247973-df3ad806-7f1a-48d1-9214-7caec445c6a3.png)
+![image](https://user-images.githubusercontent.com/24908637/182248197-dabaa5d1-b704-4ff6-8ac5-575c9008a8b2.png)
 
--CF Matrix
+
+-CF Matrix (x) broken with image_gen
 ![image](https://user-images.githubusercontent.com/24908637/182028209-2d318fc6-20ef-4f10-9855-3e21d9913d6e.png)
 
