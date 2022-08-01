@@ -4,3 +4,4 @@ model_checkpoint/chk.data-00000-of-00001
 model_checkpoint/chk.index
 vgg-face-keras.h5
 vgg_face_weights.h5
+*.h5
