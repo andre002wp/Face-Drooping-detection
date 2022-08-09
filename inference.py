@@ -12,16 +12,17 @@ cam = cv2.VideoCapture(0)
 BASE_DIR = os.path.abspath(os.getcwd())
 CHECKPOINT_PATH = os.path.join(BASE_DIR, "model_checkpoint")
 
-model = tf.keras.Sequential([
-    tf.keras.layers.Conv1D(16, 3, activation='relu',input_shape=(478,3)),
-    tf.keras.layers.Conv1D(32, 3, activation='relu'),
-    tf.keras.layers.Conv1D(64, 3, activation='relu'),
-    tf.keras.layers.Flatten(),
-    tf.keras.layers.Dense(32, activation='relu'),
-    tf.keras.layers.Dense(1, activation='sigmoid')
-])
-model.compile(loss=tf.keras.losses.BinaryCrossentropy(),optimizer='adam',metrics=['accuracy'])
-model.load_weights(CHECKPOINT_PATH+'\landmark_base.h5')
+# model = tf.keras.Sequential([
+#     tf.keras.layers.Conv1D(16, 3, activation='relu',input_shape=(478,3)),
+#     tf.keras.layers.Conv1D(32, 3, activation='relu'),
+#     tf.keras.layers.Conv1D(64, 3, activation='relu'),
+#     tf.keras.layers.Flatten(),
+#     tf.keras.layers.Dense(32, activation='relu'),
+#     tf.keras.layers.Dense(1, activation='sigmoid')
+# ])
+# model.compile(loss=tf.keras.losses.BinaryCrossentropy(),optimizer='adam',metrics=['accuracy'])
+# model.load_weights(CHECKPOINT_PATH+'\landmark_base.h5')
+model = tf.keras.models.load_model('model_checkpoint\landmark_base.h5')
 
 def clearLandmark(data):
     cleaned_data = []
@@ -113,7 +114,7 @@ with mp_face_mesh.FaceMesh(
         image_landmark = clearLandmark(face_landmarks)
         image_for_model = np.expand_dims(image_landmark, axis=0)
         prediction = model.predict(image_for_model,verbose = 0)
-        if (prediction[0]< 0.5):
+        if (prediction[0]< 0.3):
             # image = cv2.putText(image, 'Droopy {:01f} %'.format(prediction[0][0]), (cx_min, cy_max), cv2.FONT_HERSHEY_SIMPLEX,1, (0, 0, 255), 2, cv2.LINE_AA)
             image = cv2.putText(image, 'Droopy {:01f} %'.format((1-prediction[0][0]*2)*100), (cx_max-cx_min, cy_max-cy_min), cv2.FONT_HERSHEY_SIMPLEX,1, (0, 0, 255), 2, cv2.LINE_AA)
         else:
