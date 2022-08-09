@@ -114,11 +114,11 @@ with mp_face_mesh.FaceMesh(
         image_for_model = np.expand_dims(image_landmark, axis=0)
         prediction = model.predict(image_for_model,verbose = 0)
         if (prediction[0]< 0.5):
-            image = cv2.putText(image, 'Droopy {:01f} %'.format(prediction[0][0]), (cx_min, cy_max), cv2.FONT_HERSHEY_SIMPLEX,1, (0, 0, 255), 2, cv2.LINE_AA)
-            # image = cv2.putText(image, 'Droopy {:01f} %'.format((1-prediction[0][0]*2)*100), (cx_max-cx_min, cy_max-cy_min), cv2.FONT_HERSHEY_SIMPLEX,1, (0, 0, 255), 2, cv2.LINE_AA)
+            # image = cv2.putText(image, 'Droopy {:01f} %'.format(prediction[0][0]), (cx_min, cy_max), cv2.FONT_HERSHEY_SIMPLEX,1, (0, 0, 255), 2, cv2.LINE_AA)
+            image = cv2.putText(image, 'Droopy {:01f} %'.format((1-prediction[0][0]*2)*100), (cx_max-cx_min, cy_max-cy_min), cv2.FONT_HERSHEY_SIMPLEX,1, (0, 0, 255), 2, cv2.LINE_AA)
         else:
-            image = cv2.putText(image, 'Normal {:01f} %'.format(prediction[0][0]), (cx_min, cy_max), cv2.FONT_HERSHEY_SIMPLEX,1, (0, 0, 255), 2, cv2.LINE_AA)
-            # image = cv2.putText(image, 'Normal {:01f} %'.format((prediction[0][0])*100), (cx_max-cx_min, cy_max-cy_min), cv2.FONT_HERSHEY_SIMPLEX,1, (0, 0, 255), 2, cv2.LINE_AA)
+            # image = cv2.putText(image, 'Normal {:01f} %'.format(prediction[0][0]), (cx_min, cy_max), cv2.FONT_HERSHEY_SIMPLEX,1, (0, 0, 255), 2, cv2.LINE_AA)
+            image = cv2.putText(image, 'Normal {:01f} %'.format(((prediction[0][0]-0.5)*2)*100), (cx_max-cx_min, cy_max-cy_min), cv2.FONT_HERSHEY_SIMPLEX,1, (0, 0, 255), 2, cv2.LINE_AA)
     cv2.namedWindow('Face Droop Detection',cv2.WINDOW_NORMAL)
     cv2.imshow('Face Droop Detection', image)
     key = cv2.waitKey(1)
