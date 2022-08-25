@@ -94,7 +94,7 @@ baseline = 0.3
 if (prediction[0][0]< baseline):
     print("Droopy Confidence {:02f} %".format((1-(prediction[0][0]/(baseline-0)))*100))
 else:
-    print("Normal Confidence {:02f} %".format((((prediction[0][0]-baseline)/(1-baseline)))*100))
+    print("Tidak Droopy Confidence {:02f} %".format((((prediction[0][0]-baseline)/(1-baseline)))*100))
 
 cv2.imshow("results", im)
 cv2.waitKey(0) 

@@ -91,8 +91,8 @@ with mp_face_mesh.FaceMesh(
             # image = cv2.putText(image, 'Droopy {:01f} %'.format(prediction[0][0]), (cx_min, cy_max), cv2.FONT_HERSHEY_SIMPLEX,1, (0, 0, 255), 2, cv2.LINE_AA)
             image = cv2.putText(image, 'Droopy {:01f} %'.format((1-(prediction[0][0]/(baseline-0)))*100), (cx_max-cx_min, cy_max-cy_min), cv2.FONT_HERSHEY_SIMPLEX,1, (0, 0, 255), 2, cv2.LINE_AA)
         else:
-            # image = cv2.putText(image, 'Normal {:01f} %'.format(prediction[0][0]), (cx_min, cy_max), cv2.FONT_HERSHEY_SIMPLEX,1, (0, 0, 255), 2, cv2.LINE_AA)
-            image = cv2.putText(image, 'Normal {:01f} %'.format((((prediction[0][0]-baseline)/(1-baseline)))*100), (cx_max-cx_min, cy_max-cy_min), cv2.FONT_HERSHEY_SIMPLEX,1, (0, 0, 255), 2, cv2.LINE_AA)
+            # image = cv2.putText(image, 'Tidak Droopy {:01f} %'.format(prediction[0][0]), (cx_min, cy_max), cv2.FONT_HERSHEY_SIMPLEX,1, (0, 0, 255), 2, cv2.LINE_AA)
+            image = cv2.putText(image, 'Tidak Droopy {:01f} %'.format((((prediction[0][0]-baseline)/(1-baseline)))*100), (cx_max-cx_min, cy_max-cy_min), cv2.FONT_HERSHEY_SIMPLEX,1, (0, 0, 255), 2, cv2.LINE_AA)
     cv2.namedWindow('Face Droop Detection',cv2.WINDOW_NORMAL)
     cv2.imshow('Face Droop Detection', image)
     key = cv2.waitKey(1)
