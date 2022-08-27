@@ -9,7 +9,4 @@ def openFiles(directory='./'):
     if directory is None: directory ='./'
     fname = QFileDialog.getOpenFileName(None, "Select data file...", 
                 directory, filter="All files (*)")
-    return fname[0]
-
-aa = openFiles()
-print(aa)
+    return fname[0] 
