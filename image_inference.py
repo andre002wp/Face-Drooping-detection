@@ -4,6 +4,7 @@ import os
 import mediapipe as mp
 import numpy as np
 from mtcnn.mtcnn import MTCNN
+from FileImporter import openFiles
 
 mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
@@ -58,7 +59,8 @@ def getFaceLandmark(fileitem):
     return rect_min,rec_max,landmark
 
 ###########################
-filepath = os.path.join(BASE_DIR,'stroke-normal_dataset_processed\Train\\normal\download.png')
+filepath = openFiles()
+# filepath = os.path.join(BASE_DIR,'stroke-normal_dataset_processed\Train\\normal\download.png')
 ###########################
 
 # # extract a single face from a given photograph
