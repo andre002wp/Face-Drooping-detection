@@ -93,6 +93,7 @@ if(im.shape[0]>960 or im.shape[1]>640):
     im = cv2.resize(im, (int(im.shape[1]/2), int(im.shape[0]/2)))
 prediction = model.predict(image_for_model,verbose = 0)
 baseline = 0.3
+print("nilai prediksi = ",prediction[0][0])
 if (prediction[0][0]< baseline):
     print("Droopy Confidence {:02f} %".format((1-(prediction[0][0]/(baseline-0)))*100))
 else:
