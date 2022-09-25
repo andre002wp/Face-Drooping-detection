@@ -10,6 +10,12 @@
     <height>611</height>
    </rect>
   </property>
+  <property name="maximumSize">
+   <size>
+    <width>1920</width>
+    <height>1080</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
@@ -30,7 +36,7 @@
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="image">
        <attribute name="title">
@@ -94,7 +100,7 @@
             </property>
             <property name="font">
              <font>
-              <pointsize>12</pointsize>
+              <pointsize>11</pointsize>
              </font>
             </property>
             <property name="textInteractionFlags">
@@ -214,7 +220,7 @@
              </spacer>
             </item>
             <item>
-             <widget class="QComboBox" name="comboBox"/>
+             <widget class="QComboBox" name="port_selector"/>
             </item>
            </layout>
           </item>
