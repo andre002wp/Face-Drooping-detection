@@ -11,7 +11,7 @@
 + tune model (-)
 
 
-## accuracy high accuracy but still still bad (?)
+## accuracy high accuracy but still still bad (?) : more training data is needed
  ![image](https://user-images.githubusercontent.com/24908637/182247820-5c4be6ae-681d-4827-85f0-dd7fa0059bcf.png)
 
 -supposed to be droopy
